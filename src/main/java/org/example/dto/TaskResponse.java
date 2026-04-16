@@ -1,13 +1,13 @@
-package org.example.Entity;
+package org.example.dto;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class Task {
+public class TaskResponse {
 	private Long id;
 	private String title;
 	private String description;
-	private TaskStatus status;
+	private String status;
 }

@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
-@MapperScan("org.example.Mapper")
+@MapperScan("org.example.mapper")
 @SpringBootApplication
 public class TimeTrackerApplication {
 	public static void main(String[] args) {

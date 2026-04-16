@@ -1,8 +1,9 @@
-package org.example.Mapper;
+package org.example.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-import org.example.Entity.TimeRecord;
+import org.example.dto.TimeRecordResponse;
+import org.example.entity.TimeRecord;
 
 import java.time.LocalDateTime;
 import java.util.List;

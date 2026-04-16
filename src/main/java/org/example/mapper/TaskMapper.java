@@ -1,9 +1,9 @@
-package org.example.Mapper;
+package org.example.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-import org.example.Entity.Task;
-import org.example.Entity.TaskStatus;
+import org.example.entity.Task;
+import org.example.entity.TaskStatus;
 
 @Mapper
 public interface TaskMapper {
