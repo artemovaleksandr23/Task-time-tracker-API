@@ -1,5 +1,7 @@
 package org.example.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.example.dto.CreateTaskRequest;
 import org.example.dto.TaskResponse;
 import org.example.entity.TaskStatus;
@@ -7,6 +9,7 @@ import org.example.service.TaskService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+@Tag(name = "Tasks", description = "Task management API")
 @RestController
 @RequestMapping("/tasks")
 public class TaskController {
@@ -16,17 +19,20 @@ public class TaskController {
 		this.taskService = taskService;
 	}
 
+	@Operation(summary = "Create a new task")
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
 	public TaskResponse create(@RequestBody CreateTaskRequest request) {
 		return taskService.create(request);
 	}
 
+	@Operation(summary = "Get task by ID")
 	@GetMapping("/{id}")
 	public TaskResponse getById(@PathVariable Long id) {
 		return taskService.getById(id);
 	}
 
+	@Operation(summary = "Get task by ID")
 	@PutMapping("/{id}/status")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void updateStatus(@PathVariable Long id, @RequestParam TaskStatus status) {
